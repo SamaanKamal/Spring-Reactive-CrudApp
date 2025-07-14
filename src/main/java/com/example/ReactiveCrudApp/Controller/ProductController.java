@@ -36,7 +36,7 @@ public class ProductController {
         return Mono.just(ResponseEntity.ok().body(productService.updateProduct(productDto)));
     }
 
-    @DeleteMapping("/{product-id}")
+    @DeleteMapping("/delete-product/{product-id}")
     public Mono<ResponseEntity<Mono<String>>> deleteProduct(@PathVariable("product-id") String productId){
         return Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(productService.deleteProduct(productId)));
     }
